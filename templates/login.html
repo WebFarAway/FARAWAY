@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <h1>INICIAR SESIÓN</h1>
+        <div>
+            <h4>¿Cómo deseas ingresar?</h4>
+            <button  type ="button" id="document">Documento</button>
+            <button type ="button" id="email">Correo Electronico</button>
+        </div>
+        <div id="session_document" style="display: none;">
+            <select name="tipo_documento" id="select" >
+                <option value="" >TIPO DOCUMENTO</option>
+                <option name="tipo_documento" value="CC">Cedula de Ciudadania</option>
+                <option name="tipo_documento" value="CE">Cedula de Extranjeria</option>
+            </select>
+            <input name="documento" type="text" placeholder="Numero Documento">
+        </div>
+        <div id="session_email" style="display: none;">
+            <input name="email" type="email" placeholder="Correo Electronico"  id="correo">
+        </div>
+        <div id="submit" style="display: none;">
+            <input name="password" type="password" name="" id="Contraseña" placeholder="Contraseña">
+            <input type="submit" value="Iniciar Sesion">
+        </div>
+    </form>
+    <script>
+        const document_btn = document.getElementById('document');
+        const email_btn = document.getElementById('email');
+
+        document_btn.addEventListener("click", () => {
+        
+            const session_document = document.getElementById('session_document').style.display = 'block '
+            const submit= document.getElementById('submit').style.display= 'block'
+            const session_email = document.getElementById('session_email').style.display = 'none '
+        } )
+
+        email_btn.addEventListener("click", () => {
+        
+        const session_email = document.getElementById('session_email').style.display = 'block '
+        const submit= document.getElementById('submit').style.display= 'block'
+        const session_document = document.getElementById('session_document').style.display = 'none '
+
+    } )
+    </script>
+</body>
+</html>
