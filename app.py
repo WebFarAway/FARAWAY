@@ -37,7 +37,7 @@ def login():
             if usuario:
                 return redirect(url_for('interfaz_login'))
 
-    return "Datos incorrectos"
+    return ""
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)
