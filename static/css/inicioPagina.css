@@ -239,7 +239,7 @@ header {
     align-items: center;
 }
 
-.login_register a {
+.login_register button {
     --primary-color: #0096C7;
     --secondary-color: #fff;
     --hover-color: #0077B6;
@@ -258,13 +258,13 @@ header {
     font-weight: bold;
 }
 
-.login_register a .arrow-wrapper {
+.login_register button .arrow-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login_register a .arrow {
+.login_register button .arrow {
     margin-top: 1px;
     width: var(--arrow-width);
     background: var(--primary-color);
@@ -273,7 +273,7 @@ header {
     transition: 0.2s;
 }
 
-.login_register a .arrow::before {
+.login_register button .arrow::before {
     content: "";
     box-sizing: border-box;
     position: absolute;
@@ -287,15 +287,15 @@ header {
     transform: rotate(-45deg);
 }
 
-.login_register a:hover {
+.login_register button:hover {
     background-color: var(--hover-color);
 }
 
-.login_register a:hover .arrow {
+.login_register button:hover .arrow {
     background: var(--secondary-color);
 }
 
-.login_register a:hover .arrow:before {
+.login_register button:hover .arrow:before {
     right: 0;
 }
 
