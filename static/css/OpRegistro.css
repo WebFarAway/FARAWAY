@@ -1,0 +1,146 @@
+body {
+    background: linear-gradient(to bottom right, #4eaeed, #031c3c);
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    background-color: #fff;
+    padding: auto;
+    height: 90px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    place-items: center;
+}
+
+header img{
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: #fff;
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 140%;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 28px;
+}
+
+.cont_options {
+    display: flex;
+}
+
+.cont_option1, .cont_option2 {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
+
+.cont_option1 {
+    margin-left: 25%;
+}
+
+.cont_option2 {
+    margin-right: 25%;
+}
+
+.cont_img1, .cont_img2 {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cont_img img {
+    width: 45px;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+.cont_img img {
+    width: 55px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cont_option1:hover, .cont_option2:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.2s;
+}
+
+.cont_option1:active, .cont_option2:active {
+    transform: scale(0.99);
+  }
+
+p {
+    color: #031c3c;
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 480;
+    font-style: normal;
+    font-size: 140%;
+    text-align: center;
+}
+
+.button {
+    border: none;
+    color: #031c3c;
+    background: #428ec0;
+    border-radius: 18px;
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    margin-left: 45%;
+    margin-right: 45%;
+    font-size: 17px;
+    padding: 0.6em 1.5em;
+    margin-top: 5%;
+   }
+   
+.button:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.2s;
+}
+.button:active {
+    transform: scale(0.97);
+}
+   
+@keyframes pulse512 {
+    0% {
+     box-shadow: 0 0 0 0 #05badac0;
+    }
+   
+    70% {
+     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+   
+    100% {
+     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+}
+
+.selected {
+    background-color: #4eaeed;
+}

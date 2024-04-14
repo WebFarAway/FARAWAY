@@ -10,6 +10,10 @@ app.config['MYSQL_DB'] = 'faraway'
 
 mysql = MySQL(app)
 
+@app.route('/register')
+def register():
+    return render_template('opRegistro.html')
+
 @app.route('/interfaz_login')
 def interfaz_login():
     return render_template('login.html')
