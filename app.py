@@ -43,6 +43,7 @@ def login():
             usuario = cursor.fetchone()
 
             if usuario:
+                
                 return redirect(url_for('interfaz_login'))
 
     return ""
