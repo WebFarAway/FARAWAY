@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FarAway</title>
     <link rel="icon" href="">
-    <link rel="stylesheet" href="inicioPagina.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/inicioPagina.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -55,8 +55,8 @@
                             </ul>
                         </li>
                         <div class="login_register">
-                            <li><button href="#">Login</button></li>
-                            <li><button href="#">Register</button></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="/register">Register</a></li>
                         </div>
                     </ul>
                 </nav>
@@ -67,15 +67,15 @@
     <div class="contenedor_body">
         <div class="Contenedor_collage">
             <div class="columnas">
-            <img   width="250"  src="img/imagen1.jpg">
-            <img   width="250"  src="img/imagen2.jpg">
-            <img   width="250"  src="img/imagen3.jpg">
-            <img   width="250"  src="img/imagen4.jpg">
-            <img   width="250"  src="img/imagen5.jpg">
-            <img   width="250"  src="img/imagen6.jpg">
-            <img   width="250"  src="img/imagen1.jpg">
-            <img   width="250"  src="img/imagen2.jpg">
-            <img   width="250"  src="img/imagen3.jpg">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen2.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen3.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen4.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen5.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen6.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen2.jpg')}}">
+            <img   width="250"  src="{{url_for('static', filename= 'img/imagen3.jpg')}}">
             </div>
         </div>
 
@@ -90,7 +90,7 @@
         </div>
         <div class="imagen_viajero">
             <div class="viajero">
-                <img width="320" src="img/imagen7.png">
+                <img width="320" src="{{url_for('static', filename='img/imagen7.png') }}">
             </div>
         </div>
         <div class="despliegue">
@@ -106,6 +106,6 @@
     <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C332.10,218.59 162.24,213.66 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
 
     
-    <script src="inicioPagina.js"></script>
+    <script src="{{url_for('static', filename= 'js/inicioPagina.js')}}"></script>
 </body>
 </html>
