@@ -225,10 +225,18 @@ header {
     align-items: center;
 }
 
+.conocemas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .flecha_abajo {
     display: flex;
     margin: 20px;
     margin-left: 49px;
+    justify-content: center;
+    align-items: center;
 }
 
 .login_register button {
@@ -289,4 +297,51 @@ header {
 
 .login_register button:hover .arrow:before {
     right: 0;
+}
+
+.contenedor_seguridad {
+    display: flex;
+    margin: 20px;
+}
+
+.logo_seguridad img {
+    margin-top: 190px;
+    margin-right: 100px;
+}
+
+.texto_seguridad {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto_seguridad h1{
+    display: inline;
+    font-size: 50.0000px;
+    grid-area: auto;
+    text-align: left;
+    line-height: 49px;
+    margin-top: 80px;
+    margin-left: 90px;
+    margin-bottom: 40px;
+}
+
+.texto_seguridad p{
+    font-size: 20.0000px;
+    grid-area: auto;
+    text-align: left;
+    margin-left: -299px;
+    margin-right: -99px;
+    margin-top: 330px;
+}
+
+.flecha_seguridad {
+    color: #0077B6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50.0000px;
 }
