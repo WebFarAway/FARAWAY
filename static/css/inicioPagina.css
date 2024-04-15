@@ -109,6 +109,7 @@ header {
 }
 
 .menu {
+    margin-top: -10px;
     margin-right: 10px;
     margin-left: 690px;
 }
@@ -158,6 +159,10 @@ header {
 .submenu a{
     margin-left: 13px;
     margin-bottom: 20px;
+}
+
+.has-submenu{
+    margin-top: 13px;
 }
 
 .has-submenu:hover #submenu {
