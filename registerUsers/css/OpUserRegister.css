@@ -1,0 +1,748 @@
+* {
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	font-family: "Rethink Sans", sans-serif;
+}
+
+html,
+body {
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: linear-gradient(to bottom right, #4eaeed, #031c3c);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.cont_all {
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	color: #fff;
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 140%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+h4 {
+	color: #fff;
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 110%;
+	margin-top: -10px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+p {
+	color: #031c3c;
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 480;
+	font-style: normal;
+	font-size: 140%;
+	text-align: center;
+}
+
+#currentUser {
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cont_buttons {
+	max-width: 700px;
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bttnReturn,
+.bttnNext {
+	border: none;
+	color: #031c3c;
+	background: #428ec0;
+	border-radius: 18px;
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	text-align: center;
+	font-size: 17px;
+	padding: 0.6em 1.5em;
+	box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.3);
+}
+
+.bttnNext:hover,
+.bttnReturn:hover {
+	background-position: right center;
+	background-size: 200% auto;
+	-webkit-animation: pulse 2s infinite;
+	animation: pulse512 1.2s;
+}
+
+.bttnNext:active,
+.bttnReturn:active {
+	transform: scale(0.95);
+}
+
+#bttnHelp {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background-color: #428ec0;
+	border: none;
+	z-index: 9999;
+}
+
+@keyframes pulse512 {
+	0% {
+		box-shadow: 0 0 0 0 #05badac0;
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+	}
+}
+
+.contProgress2,
+.contProgress3,
+#requiredInfo2,
+#requiredInfo3,
+.pageRequiredInputs2,
+.pageRequiredInputs3,
+.animationLoader {
+	display: none;
+}
+
+.pageRequiredInputs1 {
+	max-width: 650px;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.selDocumentType,
+.DocumentNumberGroup,
+.DocumentExpeditionGroup,
+.FirstNameGroup,
+.LastNameGroup,
+.selSex,
+.selNation,
+.BirthDateGroup {
+	position: relative;
+	display: inline-block !important	;
+	margin: 4px;
+}
+
+.selBttnDocumentType,
+.inputDocumentNumber,
+.inputDocumentType,
+.inputDocumentExpedition,
+.inputFirstName,
+.inputLastName,
+.selBttnSex,
+.selBttnNation,
+.inputBirthDate {
+	border: 1.9px solid #428ec0;
+	border-radius: 10px;
+	background: white;
+	padding: 15px;
+	color: black;
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 550;
+	font-style: normal;
+	font-size: 84%;
+	box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
+.inputFirstName::placeholder,
+.inputDocumentNumber::placeholder,
+.inputLastName::placeholder,
+.inputDocumentExpedition::placeholder,
+.inputBirthDate::placeholder {
+	color: black;
+}
+
+.inputDocumentNumber {
+	width: 213px;
+}
+
+.inputDocumentExpedition {
+	width: 125px;
+}
+
+.inputFirstName,
+.inputLastName {
+	max-width: 290px;
+	width: 270px;
+}
+
+.inputBirthDate {
+	width: 223px;
+}
+
+.selBttnSex li,
+.selBttnNation li,
+.selDocumentType li {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.selBttnSex,
+.selBttnNation,
+.selBttnDocumentType {
+	justify-content: space-between;
+	width: 100px;
+	cursor: pointer;
+	position: relative;
+}
+
+.selBttnNation {
+	width: 173px;
+}
+
+.selBttnDocumentType {
+	width: 156px;
+}
+
+.selOptionsSex,
+.selOptionsNation,
+.selOptionsDocumentType {
+	display: none;
+	max-width: 130px;
+	min-width: 130px;
+	margin-top: 5px;
+	background: #fff;
+	border-radius: 7px;
+	box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+	position: fixed;
+	border: 1.5px solid #428ec0;
+	border-radius: 10px;
+	background: white;
+	cursor: pointer;
+}
+
+.selOptionsNation {
+	max-width: 200px;
+	min-width: 200px;
+}
+
+.selOptionsDocumentType {
+	max-width: 240px;
+	min-width: 240px;
+}
+
+.selSex.active .selOptionsSex,
+.selNation.active .selOptionsNation,
+.selDocumentType.active .selOptionsDocumentType {
+	display: block;
+}
+
+.selOptionsSex .optionsSex,
+.selOptionsNation .optionsNation,
+.selOptionsDocumentType .optionsDocumentType {
+	margin-left: 0;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	max-height: 100px;
+	overflow-y: auto;
+	padding: 0;
+	color: black;
+}
+
+.optionsSex li,
+.optionsNation li,
+.optionsDocumentType li {
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 450;
+	font-style: normal;
+	font-size: 84%;
+	padding-left: 8px;
+}
+
+.optionsSex li:hover,
+li.selected {
+	background: #296695;
+	width: 100%;
+	font-weight: 350;
+	color: #fff;
+}
+
+.optionsNation li:hover,
+li.selected {
+	background: #296695;
+	width: 100%;
+	font-weight: 350;
+	color: #fff;
+}
+
+.optionsDocumentType li:hover,
+li.selected {
+	background: #296695;
+	width: 100%;
+	font-weight: 350;
+	color: #fff;
+}
+
+
+.pageRequiredInputs2 {
+	max-width: 570px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.inputEmail,
+.inputExtNumber,
+.inputPhoneNumber {
+	border: 1.5px solid #428ec0;
+	border-radius: 10px;
+	background: white;
+	padding: 15px;
+	color: #031c3c;
+	transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 550;
+	font-style: normal;
+	font-size: 84%;
+}
+
+.inputEmail::placeholder,
+.inputExtNumber::placeholder,
+.inputPhoneNumber::placeholder {
+	color: #031c3c;
+}
+
+.emailGroup,
+.phoneNumberGroup,
+.selCountry {
+	position: relative;
+	display: inline-block;
+	margin: 4px;
+}
+
+.emailGroup,
+.inputEmail {
+	display: block;
+	width: 96%;
+}
+
+.phoneNumberGroup,
+.inputPhoneNumber {
+	width: 431px;
+}
+
+.inputExtNumber {
+	width: 40px;
+}
+
+.labelExtNumber {
+	position: relative;
+	display: inline-block;
+}
+   
+.spanExtNumber {
+	position: absolute;
+	left: 15px;
+	top: 48%;
+	transform: translateY(-50%);
+}
+
+.labelExtNumber input[type="number"] {
+	padding-left: 25px;
+}
+
+.pageRequiredInputs3 {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.passwordGroup,
+.confirmPassGroup {
+	position: static;
+	margin-top: 4px;
+	display: flex;
+	width: 100%;
+}
+
+.inputPass,
+.inputConfirmPass {
+	border: 1.5px solid #428ec0;
+	border-radius: 10px;
+	background: white;
+	padding: 15px;
+	color: #031c3c;
+	transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 550;
+	font-style: normal;
+	font-size: 84%;
+}
+
+.inputPass::placeholder,
+.inputConfirmPass::placeholder {
+	color: #031c3c;
+}
+
+.inputPass,
+.inputConfirmPass {
+	width: 100%;
+}
+
+.pl {
+	display: block;
+	width: 9.375em;
+	height: 9.375em;
+}
+
+.pl__arrows,
+.pl__ring-rotate,
+.pl__ring-stroke,
+.pl__tick {
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.pl__arrows {
+	animation-name: arrows42;
+	transform: rotate(45deg);
+	transform-origin: 16px 52px;
+}
+
+.pl__ring-rotate,
+.pl__ring-stroke {
+	transform-origin: 80px 80px;
+}
+
+.pl__ring-rotate {
+	animation-name: ringRotate42;
+}
+
+.pl__ring-stroke {
+	animation-name: ringStroke42;
+	transform: rotate(-45deg);
+}
+
+.pl__tick {
+	animation-name: tick42;
+}
+
+.pl__tick:nth-child(2) {
+	animation-delay: -1.75s;
+}
+
+.pl__tick:nth-child(3) {
+	animation-delay: -1.5s;
+}
+
+.pl__tick:nth-child(4) {
+	animation-delay: -1.25s;
+}
+
+.pl__tick:nth-child(5) {
+	animation-delay: -1s;
+}
+
+.pl__tick:nth-child(6) {
+	animation-delay: -0.75s;
+}
+
+.pl__tick:nth-child(7) {
+	animation-delay: -0.5s;
+}
+
+.pl__tick:nth-child(8) {
+	animation-delay: -0.25s;
+}
+
+/* Animations */
+@keyframes arrows42 {
+	from {
+		transform: rotate(45deg);
+	}
+
+	to {
+		transform: rotate(405deg);
+	}
+}
+
+@keyframes ringRotate42 {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(720deg);
+	}
+}
+
+@keyframes ringStroke42 {
+	from,
+	to {
+		stroke-dashoffset: 452;
+		transform: rotate(-45deg);
+	}
+
+	50% {
+		stroke-dashoffset: 169.5;
+		transform: rotate(-180deg);
+	}
+}
+
+@keyframes tick42 {
+	from,
+	3%,
+	47%,
+	to {
+		stroke-dashoffset: -12;
+	}
+
+	14%,
+	36% {
+		stroke-dashoffset: 0;
+	}
+}
+
+.animationLoader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+}
+   
+:root {
+	--warning: #bc8c12;
+	--warning-hover: #9b7512;
+}
+
+.limiteNotificacion {
+	position: fixed;
+	right: 40px;
+	bottom: 40px;
+	height: 100%;
+	max-height: 100px;
+	overflow-y: hidden;
+}
+
+.cont_notification {
+	width: auto;
+	max-width: 250px;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 7px;
+}
+
+.notificacion {
+	max-height: 100px;
+	background: #ccc;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 10px;
+	overflow: hidden;
+	animation-name: apertura;
+	animation-duration: 200ms;
+	animation-timing-function: ease-out;
+	position: relative;
+}
+
+.notificacion.warning {
+	background: var(--warning);
+}
+
+.notificacion .contenido {
+	display: grid;
+	grid-template-columns: 30px auto;
+	align-items: center;
+	gap: 13px;
+	padding: 13px;
+}
+
+.texto .descripcion {
+	font-family: "Rethink Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	text-align: center;
+	font-size: 12px;
+}
+
+.notificacion .icono {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.notificacion .titulo {
+	font-size: 16px;
+	margin-bottom: -6px;
+	margin-top: -2px;
+}
+
+.notificacion .btt-cerrarNotificacion {
+	background: rgba(0, 0, 0, 0.1);
+	border: none;
+	cursor: pointer;
+	padding: 0px 5px;
+	transition: 0.3s ease all;
+}
+
+.notificacion .btt-cerrarNotificacion:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.notificacion .btt-cerrarNotificacion .icono {
+	width: 20px;
+	height: 20px;
+	color: #031c3c;
+}
+
+@keyframes apertura {
+	from {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.notificacion.cerrando {
+	animation-name: cierre;
+	animation-duration: 200ms;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes cierre {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(100% + 40px));
+	}
+}
+
+.notificacion.autoCierre::after {
+	content: '';
+	width: 100%;
+	height: 4px;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	bottom: 0;
+	animation-name: autoCierre;
+	animation-duration: 5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes autoCierre {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0%;
+	}
+}
+
+.progressBar {
+    border-radius: 50px 50px 50px 50px;
+	max-width: 400px;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+    height: 20px;
+    width: 100%;
+    border: 1px solid #4eaeed;
+    background-color: #e6f3fa;
+    margin-bottom: 15px;
+	box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.1);
+}
+ 
+.progress1 {
+	width: 0%;
+    height: 100%;
+    background: #00c4ce;
+    display: flex;
+    align-items: center;
+    transition: width 2s;
+    border-radius: 50px 50px 50px 50px;
+}
+
+.progress2 {
+    height: 100%;
+    background: #00c4ce;
+    display: flex;
+    align-items: center;
+    transition: width 1s;
+    border-radius: 50px 50px 50px 50px;
+}
+
+.progress3 {
+    height: 100%;
+    background: #00c4ce;
+    display: flex;
+    align-items: center;
+    transition: width 1s;
+    border-radius: 50px 50px 50px 50px;
+}
+ 
+#porcentProgressBar1 {
+    margin-left: auto;
+	margin-right: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#porcentProgressBar2 {
+    margin-left: auto;
+	margin-right: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#porcentProgressBar3 {
+    margin-left: auto;
+	margin-right: 8px;
+    font-weight: bold;
+    color: #fff;
+}

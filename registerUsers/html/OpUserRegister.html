@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/registerUsers/css/OpUserRegister.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+		<link rel="icon" type="image/png" href="/registerUsers/img/Dizqlogo.png" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+		<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+		<title>Option Register - FarAway</title>
+	</head>
+	<body>
+		<div class="cont_all">
+			<div id="cont_progressBar" class="cont_progressBar">
+				<div class="progressBar">
+					<div class="contProgress1">
+						<div class="progress1">
+							<span id="porcentProgressBar1">30%</span>
+						</div>
+					</div>
+					<div class="contProgress2">
+					<div class="progress2">
+						<span id="porcentProgressBar2">60%</span>
+					</div>
+					</div>
+					<div class="contProgress3">
+						<div class="progress3">
+							<span id="porcentProgressBar3">90%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<img id="currentUser" src="/registerUsers/img/CurrentUserWhite.png" alt="Current User" />
+
+			<div id="pagRequiredInfo" class="pagRequiredInfo">
+				<h2 id="requiredInfo1">Información personal</h2>
+				<h2 id="requiredInfo2">Información de contacto</h2>
+				<h2 id="requiredInfo3">Información de ingreso</h2>
+			</div>
+
+			<h4>Usuario corriente</h4>
+
+			<div class="cont_inputs">
+				<div class="pageRequiredInputs1">
+					<div class="FirstNameGroup">
+						<input type="text" id="inputFirstName" class="inputFirstName" autocomplete="off" placeholder="Nombre(s)*" />
+					</div>
+					<div class="LastNameGroup">
+						<input type="text" id="inputLastName" class="inputLastName" autocomplete="off" placeholder="Apellido(s)*" />
+					</div>
+					<div class="selDocumentType">
+						<div class="selBttnDocumentType">
+							<span>Tipo documento*</span>
+							<i class="uil uil-angle-down"></i>
+						</div>
+						<div class="selOptionsDocumentType">
+							<ul class="optionsDocumentType"></ul>
+						</div>
+					</div>
+					<div class="DocumentNumberGroup">
+						<input
+							type="number"
+							id="inputDocumentNumber"
+							class="inputDocumentNumber"
+							autocomplete="off"
+							placeholder="Número de documento*"
+						/>
+					</div>
+					<div class="DocumentExpeditionGroup">
+						<input
+							type="date"
+							id="inputDocumentExpedition"
+							class="inputDocumentExpedition"
+							autocomplete="off"
+							placeholder="Fecha Expedición*"
+						/>
+					</div>
+					<div class="selSex">
+						<div class="selBttnSex">
+							<span>Sexo</span>
+							<i class="uil uil-angle-down"></i>
+						</div>
+						<div class="selOptionsSex">
+							<ul class="optionsSex"></ul>
+						</div>
+					</div>
+					<div class="selNation">
+						<div class="selBttnNation">
+							<span>Nacionalidad*</span>
+							<i class="uil uil-angle-down"></i>
+						</div>
+						<div class="selOptionsNation">
+							<ul class="optionsNation"></ul>
+						</div>
+					</div>
+					<div class="BirthDateGroup">
+						<input type="date" id="inputBirthDate" class="inputBirthDate" autocomplete="off" placeholder="Fecha nacimiento*" />
+					</div>
+				</div>
+
+				<div class="pageRequiredInputs2">
+					<div class="emailGroup">
+						<input type="email" id="inputEmail" class="inputEmail" autocomplete="off" placeholder="Email/Correo*" />
+					</div>
+					<div class="selCountry">
+						<label id="labelExtNumber" class="labelExtNumber">
+							<span class="spanExtNumber">+</span>
+							<input type="number" id="inputExtNumber" class="inputExtNumber" min="0" step="0.01" />
+						</label>
+					</div>
+					<div class="phoneNumberGroup">
+						<input
+							type="number"
+							id="inputPhoneNumber"
+							class="inputPhoneNumber"
+							autocomplete="off"
+							placeholder="Número celular*"
+							pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}"
+						/>
+					</div>
+				</div>
+
+				<form class="pageRequiredInputs3">
+					<div class="passwordGroup">
+						<input type="password" id="inputPass" class="inputPass" autocomplete="off" placeholder="Contraseña*" />
+					</div>
+					<div class="confirmPassGroup">
+						<input
+							type="password"
+							id="inputConfirmPass"
+							class="inputConfirmPass"
+							autocomplete="off"
+							placeholder="Confirmar contraseña*"
+						/>
+					</div>
+				</form>
+			</div>
+
+			<div class="cont_buttons">
+				<button id="bttnReturn" class="bttnReturn">Atrás</button>
+				<button id="bttnNext" class="bttnNext">Siguiente</button>
+
+				<button id="bttnHelp" class="bttnHelp">
+					<i class="fas fa-question-circle"></i>
+				</button>
+			</div>
+		</div>
+		<div class="animationLoader">
+			<svg class="pl" viewBox="0 0 160 160" width="160px" height="160px" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+						<stop offset="0%" stop-color="#000"></stop>
+						<stop offset="100%" stop-color="#fff"></stop>
+					</linearGradient>
+					<mask id="mask1">
+						<rect x="0" y="0" width="160" height="160" fill="url(#grad)"></rect>
+					</mask>
+					<mask id="mask2">
+						<rect x="28" y="28" width="104" height="104" fill="url(#grad)"></rect>
+					</mask>
+				</defs>
+
+				<g>
+					<g class="pl__ring-rotate">
+						<circle
+							class="pl__ring-stroke"
+							cx="80"
+							cy="80"
+							r="72"
+							fill="none"
+							stroke="hsl(223,90%,55%)"
+							stroke-width="16"
+							stroke-dasharray="452.39 452.39"
+							stroke-dashoffset="452"
+							stroke-linecap="round"
+							transform="rotate(-45,80,80)"
+						></circle>
+					</g>
+				</g>
+				<g mask="url(#mask1)">
+					<g class="pl__ring-rotate">
+						<circle
+							class="pl__ring-stroke"
+							cx="80"
+							cy="80"
+							r="72"
+							fill="none"
+							stroke="hsl(193,90%,55%)"
+							stroke-width="16"
+							stroke-dasharray="452.39 452.39"
+							stroke-dashoffset="452"
+							stroke-linecap="round"
+							transform="rotate(-45,80,80)"
+						></circle>
+					</g>
+				</g>
+
+				<g>
+					<g stroke-width="4" stroke-dasharray="12 12" stroke-dashoffset="12" stroke-linecap="round" transform="translate(80,80)">
+						<polyline
+							class="pl__tick"
+							stroke="hsl(223,10%,90%)"
+							points="0,2 0,14"
+							transform="rotate(-135,0,0) translate(0,40)"
+						></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(-90,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(-45,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(0,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(45,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(90,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(135,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(180,0,0) translate(0,40)"></polyline>
+					</g>
+				</g>
+				<g mask="url(#mask1)">
+					<g stroke-width="4" stroke-dasharray="12 12" stroke-dashoffset="12" stroke-linecap="round" transform="translate(80,80)">
+						<polyline
+							class="pl__tick"
+							stroke="hsl(223,90%,80%)"
+							points="0,2 0,14"
+							transform="rotate(-135,0,0) translate(0,40)"
+						></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(-90,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(-45,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(0,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(45,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(90,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(135,0,0) translate(0,40)"></polyline>
+						<polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(180,0,0) translate(0,40)"></polyline>
+					</g>
+				</g>
+
+				<g>
+					<g transform="translate(64,28)">
+						<g class="pl__arrows" transform="rotate(45,16,52)">
+							<path
+								fill="hsl(3,90%,55%)"
+								d="M17.998,1.506l13.892,43.594c.455,1.426-.56,2.899-1.998,2.899H2.108c-1.437,0-2.452-1.473-1.998-2.899L14.002,1.506c.64-2.008,3.356-2.008,3.996,0Z"
+							></path>
+							<path
+								fill="hsl(223,10%,90%)"
+								d="M14.009,102.499L.109,58.889c-.453-1.421,.559-2.889,1.991-2.889H29.899c1.433,0,2.444,1.468,1.991,2.889l-13.899,43.61c-.638,2.001-3.345,2.001-3.983,0Z"
+							></path>
+						</g>
+					</g>
+				</g>
+				<g mask="url(#mask2)">
+					<g transform="translate(64,28)">
+						<g class="pl__arrows" transform="rotate(45,16,52)">
+							<path
+								fill="hsl(333,90%,55%)"
+								d="M17.998,1.506l13.892,43.594c.455,1.426-.56,2.899-1.998,2.899H2.108c-1.437,0-2.452-1.473-1.998-2.899L14.002,1.506c.64-2.008,3.356-2.008,3.996,0Z"
+							></path>
+							<path
+								fill="hsl(223,90%,80%)"
+								d="M14.009,102.499L.109,58.889c-.453-1.421,.559-2.889,1.991-2.889H29.899c1.433,0,2.444,1.468,1.991,2.889l-13.899,43.61c-.638,2.001-3.345,2.001-3.983,0Z"
+							></path>
+						</g>
+					</g>
+				</g>
+			</svg>
+		</div>
+		<div class="limiteNotificacion">
+			<div class="cont_notification" id="cont_notification"></div>
+		</div>
+
+		<script src="/registerUsers/js/OpUserRegister.js"></script>
+	</body>
+</html>
