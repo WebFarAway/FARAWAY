@@ -14,16 +14,20 @@ mysql = MySQL(app)
 def index():
     return render_template('inicioPagina.html')
 
-@app.route('/register')
+@app.route('/opRegister')
 def register():
     return render_template('opRegistro.html')
 
-@app.route('/interfaz_login')
-def interfaz_login():
-    return render_template('login.html')
+@app.route("/registerUser")
+def registerUser():
+    return render_template("OpUserRegister.html")
 
-@app.route('/login', methods=['POST'])
-def login():
+@app.route('/opLogin')
+def opLogin():
+    return render_template('opLogin.html')
+
+@app.route('/loginUser', methods=['POST'])
+def loginUser():
     if request.method == 'POST':
         tipo_documento = request.form['tipo_documento']
         documento = request.form['documento']
@@ -36,7 +40,7 @@ def login():
             usuario = cursor.fetchone()
 
             if usuario:
-                return redirect(url_for('interfaz_login'))
+                return redirect(url_for('opLogin'))
 
         elif email and password:
             cursor.execute('SELECT * FROM usuarios WHERE correo= %s AND contraseña = %s', (email, password))
@@ -44,7 +48,7 @@ def login():
 
             if usuario:
                 
-                return redirect(url_for('interfaz_login'))
+                return redirect(url_for('opLogin'))
 
     return ""
 

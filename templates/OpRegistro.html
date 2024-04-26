@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename= 'css/opRegistro.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/OpRegistro.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/Dizq_logo.png">
+    <link rel="icon" type="image/png" href="/registerUsers/img/DizqLogo.png">
     <title>Option Register - FarAway</title>
 </head>
 <body>
     <header>
-            <img src="{{url_for('static', filename='img/Dizq_logo.png')}}">
+            <img src="{{url_for('static', filename='/img/DizqLogo.png')}}">
     </header>
     <h2>
         Selecciona tipo de usuario para su registro
@@ -21,8 +21,8 @@
     <div class="cont_options">
         
             <button id="option1" class="cont_option1">
-                <div class="cont_img1"">
-                    <img src="{{url_for('static', filename='img/OnePerson.png') }}" alt="Current user">
+                <div class="cont_img1">
+                    <img src="{{url_for('static', filename='img/CurrentUserDarkBlue.png')}} alt="Current user">
                 </div>
                 <div class="text_option1">
                     <p>Turista<br>Usuario Corriente</p>
@@ -31,7 +31,7 @@
 
             <button id="option2" class="cont_option2">
                 <div class="cont_img2">
-                    <img src="{{url_for('static', filename= 'img/ThreePersons.png')}}" alt="Guide user">
+                    <img src="{{url_for('static', filename='/img/ThreePersons.png')}} alt="Guide user">
                 </div>
                 <div class="text_option2"">
                     <p>Guía Turístico<br>Prestador de servicio</p>
@@ -41,28 +41,37 @@
     </div>
 
     <div class="cont_button">
-        <button class="button">
+        <button class="bttnNext">
             Siguiente
         </button>
     </div>
 
+    <div class="limiteNotificacion">
+        <div class="cont_notification" id="cont_notification"></div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            let option1 = document.getElementById('option1');
-            let option2 = document.getElementById('option2');
+            const option1 = document.getElementById('option1');
+            const option2 = document.getElementById('option2');
+            const bttnNext = document.querySelector(".bttnNext");
+            let optionSelect = "";
     
             function selectOption(selectedOption) {
                 if (selectedOption.classList.contains('selected')) {
                     selectedOption.classList.remove('selected');
+                    optionSelect = null;
                 } 
                 else {
                     if (selectedOption === option1) {
                         option1.classList.add('selected');
                         option2.classList.remove('selected');
+                        optionSelect = "option1";
                     } 
                     else {
                         option2.classList.add('selected');
                         option1.classList.remove('selected');
+                        optionSelect = "option2";
                     }
                 }
             }
@@ -70,11 +79,108 @@
             option1.addEventListener('click', function() {
                 selectOption(option1);
             });
-    
+            
             option2.addEventListener('click', function() {
                 selectOption(option2);
             });
+
+            bttnNext.addEventListener("click", function(){
+                if (optionSelect == "option1") {
+                    window.location.href = "/registerUser";
+                } else {
+
+                    // Función para manejar la creacion y cierre de las notificaciones
+				    const agregarNotificacion = ({ tipo, titulo, descripcion, autoCierre }) => {
+					    // Se crea la nuevo notificacion
+					    const nuevaNotificacion = document.createElement('div');
+                        
+					    // Se agrega las clases
+					    nuevaNotificacion.classList.add('notificacion');
+					    nuevaNotificacion.classList.add(tipo);
+					    if (autoCierre) nuevaNotificacion.classList.add('autoCierre');
+                        
+					    // Se agrega id de la notificacion
+					    const numeroAzar = Math.floor(Math.random() * 100);
+					    const fecha = Date.now();
+					    const NotificacionId = fecha + numeroAzar;
+					    nuevaNotificacion.id = NotificacionId;
+                        
+					    const iconos = {
+					    	warning: 
+					    		`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+					    			<path
+					    				d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+					    			/>
+					    		</svg>`,
+					    };
+                    
+					    // Aqui se crea la plantilla de la notificacion
+					    const notificacion = `
+					    	<div class="contenido">
+					    		<div class="icono">
+					    			${iconos[tipo]}
+					    		</div>
+					    		<div class="texto">
+					    			<p class="titulo">${titulo}</p>
+					    			<p class="descripcion">${descripcion}</p>
+					    		</div>
+					    	</div>
+					    	<button class="btt-cerrarNotificacion">
+					    		<div class="icono">
+					    			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+					    				<path
+					    					d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+					    				/>
+					    			</svg>
+					    		</div>
+					    	</button>
+					    `;
+                        
+					    // Aqui se agrega la plantilla html
+					    nuevaNotificacion.innerHTML = notificacion;
+                        
+					    // Aqui se agrega la nueva notificacion al contenedor
+					    cont_notification.appendChild(nuevaNotificacion);
+                        
+					    // Función para menajera el cierre del notificacion
+					    const AnimacionCierre = (e) => {
+					    	if (e.animationName === 'cierre') {
+					    		nuevaNotificacion.removeEventListener('animationend', AnimacionCierre);
+					    		nuevaNotificacion.remove();
+					    	}
+					    };
+                    
+					    if (autoCierre) {
+					    	setTimeout(() => cerrarNotificacion(NotificacionId), 4000);
+					    }
+                    
+					    // Aqui se detecta cuando se cierra la animacion
+					    nuevaNotificacion.addEventListener('animationend', AnimacionCierre);
+				    };
+
+				    const cont_notification = document.getElementById("cont_notification");
+                    
+				    agregarNotificacion({ tipo: 'warning', titulo: 'Atención', descripcion: '¡Selecione una opción para continuar!', autoCierre: true});
+                    
+				    // Función para cerrar la notificacion
+				    const cerrarNotificacion = (id) => {
+				    	document.getElementById(id)?.classList.add('cerrando');
+				    };
+                
+				    // Aqui se detecta el click o la interaccion con las notificaciones
+				    cont_notification.addEventListener('click', (e) => {
+				    	const NotificacionId = e.target.closest('div.notificacion').id;
+                    
+				    	if (e.target.closest('button.btt-cerrarNotificacion')) {
+				    		cerrarNotificacion(NotificacionId);
+				    	};
+				    });
+                };
+            });
+           
         });
+
+
     </script>
 
 </body>
