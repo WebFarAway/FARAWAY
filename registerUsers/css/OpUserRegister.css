@@ -559,6 +559,9 @@ li.selected {
 	height: 100%;
 	max-height: 100px;
 	overflow-y: hidden;
+}
+
+.limiteNotificacion * {
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 }
