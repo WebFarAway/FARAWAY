@@ -580,6 +580,8 @@ li.selected {
 	animation-duration: 200ms;
 	animation-timing-function: ease-out;
 	position: relative;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
 }
 
 .notificacion.warning {
