@@ -15,10 +15,6 @@ mysql = MySQL(app)
 def index():
     return render_template('inicioPagina.html')
 
-@app.route('/opRegister')
-def register():
-    return render_template('opRegistro.html')
-
 @app.route("/registerUser")
 def registerUser():
     return render_template("OpUserRegister.html")
