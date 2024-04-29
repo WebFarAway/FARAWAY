@@ -56,67 +56,53 @@
             </div>
         </div>
     </header>
-    
-    <div class="contenedor_body">
-        <div class="Contenedor_collage">
-            <div class="columnas">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen2.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen3.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen4.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen5.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen6.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen2.jpg')}}">
-            <img   width="250"  src="{{url_for('static', filename= 'img/imagen3.jpg')}}">
-            </div>
-        </div>
-
-        <div class="faraway">
-            <div class="texto_descrubre">
-                <h2>¡Descubre el encanto oculto en cada destino!</h2>
-            </div>
-
-            <div class="boton_descubre">
-                <button onclick="BajarContenedor()">¡Comencemos!</button>
-            </div>
-        </div>
-        <div class="imagen_viajero">
-            <div class="viajero">
-                <img width="320" src="{{url_for('static', filename= 'img/imagen7.png')}}">
-            </div>
-        </div>
-        <div class="despliegue">
-            <div class="funcion">
-                <div class="conocemas">
-                    <button class="learn-more" onclick="BajarContenedor()">
-                        <span class="circle" aria-hidden="true">
-                        <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Conoce Más</span>
-                    </button>
+    <div class="cotenedor_todo_body">
+        <div class="contenedor_body">
+            <div class="Contenedor_collage">
+                <div class="columnas">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
+                <img   width="250"  src="{{url_for('static', filename= 'img/imagen1.jpg')}}">
                 </div>
-                
+            </div>
+            <div class="imagen_viajero">
+                <div class="viajero">
+                    <img width="320" src="{{url_for('static', filename= 'img/imagen7.png')}}">
+                </div>
+            </div>
+            <div class="faraway">
+                <div class="texto_descrubre">
+                    <h2>¡Descubre el encanto oculto en cada destino!</h2>
+                </div>
+                <div class="texto_descubre_todo">
+                    <div class="boton_descubre">
+                        <button onclick="BajarContenedor()">¡Comencemos!</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="despliegue">
+                <div class="funcion">
+                    <div class="conocemas">
+                        <button class="learn-more" onclick="BajarContenedor()">
+                            <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Conoce Más</span>
+                        </button>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-    <div class="final_body" ><svg viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M0.00,49.98 C332.10,218.59 162.24,213.66 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" "></path></svg></div>
-    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C332.10,218.59 162.24,213.66 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
-      
-    <section id="contenedorSeguridad">
-    <div class="contenedor_seguridad" >
-        <div class="texto_seguridad">
-            <h1>Fiabilidad en nuestros servicios</h1>
-            <p>FarAway te brinda una experiencia grata y satisfactoria teniendo en cuenta tu bienestar y salud, con nosotros no tendrás que preocuparte por tu seguridad.</p>
-        </div>
-        <div class="logo_seguridad">
-            <img src="{{url_for('static', filename= 'img/imagen8.png')}}">
-        </div>
-    </div>
-    </section>
-    <div class="flecha_seguridad">
-    <span class="material-symbols-outlined flecha">expand_more</span>
-    </div>
+
     <script src="{{url_for('static', filename= 'js/inicioPagina.js')}}"></script>
 </body>
 </html>
